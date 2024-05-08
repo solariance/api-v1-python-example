@@ -1,6 +1,6 @@
-# Solariance API Client
+# Solariance API V1 Client
 
-This repository contains a Python client for interacting with the Solariance API. The client is designed to facilitate authentication, retrieve JWT tokens, and fetch forecast power data for a given system ID.
+This repository contains a Python client for interacting with the Solariance API V1. The client is designed to facilitate authentication, retrieve JWT tokens, and fetch forecast power data for a given system ID.
 
 ## Features
 
@@ -24,7 +24,7 @@ Before using the client, ensure you have set the following environment variables
 - `SOLARIANCE_PWD`: Your Solariance password.
 - `SYSTEM_ID`: The ID of the system for which you want to fetch forecast power data.
 
-To run the client and fetch forecast power data, execute the script:
+To run the client and fetch forecast power data, execute the script
 
 ## Contributing
 
