@@ -8,7 +8,8 @@ SYSTEM_ID = os.environ.get("SYSTEM_ID")
 
 SOLARIANCE_API_V1 = "https://dev-api-solariance.azurewebsites.net/v1"
 USER_AUTH_WITH_PWD = "user/auth/pw"
-FORECAST_POWER = "forecast/power"
+FORECAST_POWER = "forecast/power" 
+PV_SYSTEM_INFO = "system/info"
 
 def solariance_api_call(method: str, endpoint: str, headers: dict, body: dict, params: dict) -> dict:
     """
@@ -96,12 +97,39 @@ def get_forecast_power(token: str, system_id:str) -> dict:
     
     return response
 
+def get_pv_system(token: str, system_id:str) -> dict:
+    """
+    Retrieves information about a PV system.
+
+    Args:
+        token (str): The authorization token for the API.
+        system_id (str): The ID of the PV system.
+
+    Returns:
+        dict: The response containing information about the PV system.
+    """
+
+    response = solariance_api_call(
+        method="GET",
+        endpoint=PV_SYSTEM_INFO,
+        headers={
+            "Authorization": token
+        }, 
+        body={},
+        params={
+            "system_id": system_id
+        })
+    
+    return response
+
 def main():
     """
-    This is the main function that retrieves a user JWT token,
-    gets the forecast power, and prints it.
+    This is the main function that shows an example to get a user JWT token, 
+    fetch information about the pv system and the forecasted power, and prints it.
     """
     token = get_user_jwt_token(SOLARIANCE_USER, SOLARIANCE_PWD)
+    pv_system = get_pv_system(token, SYSTEM_ID)
+    print(pv_system)
     forecast_power = get_forecast_power(token, SYSTEM_ID)
     print(forecast_power)
 
