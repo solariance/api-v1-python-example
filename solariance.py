@@ -6,7 +6,7 @@ SOLARIANCE_USER = os.environ.get("SOLARIANCE_USER")
 SOLARIANCE_PWD = os.environ.get("SOLARIANCE_PWD")
 SYSTEM_ID = os.environ.get("SYSTEM_ID")
 
-SOLARIANCE_API_V1 = "https://dev-api-solariance.azurewebsites.net/v1"
+SOLARIANCE_API_V1 = "https://api.solariance.de/v1"
 USER_AUTH_WITH_PWD = "user/auth/pw"
 FORECAST_POWER = "forecast/power" 
 PV_SYSTEM_INFO = "system/info"
