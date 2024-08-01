@@ -4,7 +4,7 @@ This repository contains a Python client for interacting with the Solariance API
 
 ## Features
 
-- **Authentication**: Retrieve JWT tokens for authenticated requests.
+- **Authentication**: Retrieve JWT tokens for authenticated requests. Each token is valid for 3 days.
 - **Forecast Power**: Fetch forecast power data for a specified system ID.
 
 ## Prerequisites
