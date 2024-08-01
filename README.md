@@ -2,6 +2,9 @@
 
 This repository contains a Python client for interacting with the Solariance API V1. The client is designed to facilitate authentication, retrieve JWT tokens, and fetch forecast power data for a given system ID.
 
+## API Endpoint Documentation
+https://developer.solariance.de
+
 ## Features
 
 - **Authentication**: Retrieve JWT tokens for authenticated requests. Each token is valid for 3 days.
