@@ -50,7 +50,7 @@ def solariance_api_call(method: str, endpoint: str, headers: dict, body: dict, p
 
 def get_user_jwt_token(user: str, pwd: str) -> str:
     """
-    Retrieves a JWT token for the specified user.
+    Retrieves a JWT token for the specified user. Each token is valid for 3 days.
 
     Args:
         user (str): The username of the user.
