@@ -9,7 +9,7 @@ SYSTEM_ID = os.environ.get("SYSTEM_ID")
 SOLARIANCE_API_V1 = "https://api.solariance.de/v1"
 USER_AUTH_WITH_PWD = "user/auth/pw"
 FORECAST_POWER = "forecast/power" 
-PV_SYSTEM_INFO = "system/info"
+PV_SYSTEM_VIEW = "system/view"
 
 def solariance_api_call(method: str, endpoint: str, headers: dict, body: dict, params: dict) -> dict:
     """
@@ -50,7 +50,7 @@ def solariance_api_call(method: str, endpoint: str, headers: dict, body: dict, p
 
 def get_user_jwt_token(user: str, pwd: str) -> str:
     """
-    Retrieves a JWT token for the specified user. Each token is valid for 3 days.
+    Retrieves a JWT token for the specified user.
 
     Args:
         user (str): The username of the user.
@@ -70,7 +70,7 @@ def get_user_jwt_token(user: str, pwd: str) -> str:
         },
         params={})
     
-    return response.get("token", "")
+    return response.get("data").get("token")
 
 def get_forecast_power(token: str, system_id:str) -> dict:
     """
@@ -97,7 +97,7 @@ def get_forecast_power(token: str, system_id:str) -> dict:
     
     return response
 
-def get_pv_system(token: str, system_id:str) -> dict:
+def get_system_view(token: str, system_id:str) -> dict:
     """
     Retrieves information about a PV system.
 
@@ -111,7 +111,7 @@ def get_pv_system(token: str, system_id:str) -> dict:
 
     response = solariance_api_call(
         method="GET",
-        endpoint=PV_SYSTEM_INFO,
+        endpoint=PV_SYSTEM_VIEW,
         headers={
             "Authorization": token
         }, 
@@ -128,10 +128,11 @@ def main():
     fetch information about the pv system and the forecasted power, and prints it.
     """
     token = get_user_jwt_token(SOLARIANCE_USER, SOLARIANCE_PWD)
-    pv_system = get_pv_system(token, SYSTEM_ID)
-    print(pv_system)
+    pv_system = get_system_view(token, SYSTEM_ID)
+    print(f"View PV System {SYSTEM_ID}: {pv_system}\n")
     forecast_power = get_forecast_power(token, SYSTEM_ID)
-    print(forecast_power)
+    # Print the forecasted power for the first time period on the first day
+    print(f"PV Power Forecast for {SYSTEM_ID}: {forecast_power.get('data').get('forecast')[0][0]}")
 
 if __name__ == "__main__":
     main()
