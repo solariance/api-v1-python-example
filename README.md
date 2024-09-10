@@ -73,4 +73,10 @@ If you have any questions or need further assistance, please contact our support
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details
+By using the Solariance API V1, you agree to the following terms:
+
+- **Attribution**: You must provide attribution to **Solariance** in any derivative works, publications, or products that use the Solariance API. The attribution must clearly state: "Powered by Solariance" or "Data provided by Solariance API."
+- **Non-Commercial Use**: The Solariance API V1 is free to use for non-commercial purposes only. Any commercial use of the Solariance API V1 (including, but not limited to, use in a product or service that is sold or monetized) requires explicit permission from Solariance.
+- **Permission for Commercial Use**: To request permission for commercial use, please contact [sales@solariance.de](mailto:sales@solariance.de) with details about your intended use.
+
+This license ensures that any use of the Solariance API V1 is properly credited and restricts commercial use without prior approval. If you have any questions about licensing, please contact [support@solariance.de](mailto:support@solariance.de).
