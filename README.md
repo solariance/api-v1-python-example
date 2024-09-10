@@ -67,6 +67,10 @@ After adding the line, reload the configuration file or open a new terminal sess
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue to discuss potential improvements or bug fixes.
 
+## Support
+
+If you have any questions or need further assistance, please contact our support team at support@solariance.de.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details
