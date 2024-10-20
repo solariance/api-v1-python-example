@@ -7,7 +7,7 @@ https://developer.solariance.de
 
 ## Features
 
-- **Authentication**: Retrieve JWT tokens for authenticated requests. Each token is valid for 3 days.
+- **Authentication**: Retrieve JWT tokens for authenticated requests. Each token is valid for 14 days.
 - **Forecast Power**: Fetch forecast power data for a specified system ID.
 
 ## Prerequisites
